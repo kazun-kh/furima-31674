@@ -6,7 +6,6 @@
 | Column               | Type   | Options     |
 | ---------------------| ------ | ----------- |
 | email                | string | null: false |
-| password             | string | null: false |
 | encrypted_password   | string | null: false |
 | nick_name            | string | null: false |
 | last_name            | string | null: false |
@@ -63,12 +62,12 @@
 
 | Column           | Type        | Options           |
 | ---------------- | ----------- | ----------------- |
-| postal_code      | string      | foreign_key: true |
-| city             | string      | foreign_key: true |
-| house_number_id  | string      | null: false,      |
-| building_name_id | string      |                   |
-| phone_number_id  | string      | null: false,      |
-| prefecture_id    | integer     | null: false,      |
+| postal_code      | string      | null: false       |
+| city             | string      | null: false       |
+| house_number     | string      | null: false,      |
+| building_name    | string      |                   |
+| phone_number     | string      | null: false       |
+| prefecture_id    | integer     | null: false       |
 | order            | references  | foreign_key: true |
 
 
