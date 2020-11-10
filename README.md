@@ -7,7 +7,7 @@
 | ---------------------| ------ | ----------- |
 | email                | string | null: false |
 | password             | string | null: false |
-| password_confirmation| string | null: false |
+| encrypted_password   | string | null: false |
 | nick_name            | string | null: false |
 | last_name            | string | null: false |
 | first_name           | string | null: false |
@@ -25,16 +25,16 @@
 ## items テーブル
 
 | Column    | Type       | Options                        
-| ------------------- | ---------- |------------------------------- |
-| name                | string     | null: false                    |
-| info                | text       | null: false                    |
-| price               | integer    | null: false                    |
-| user                | references | foreign_key: true              |
-| category            | integer    | null: false                    |
-| sales_status        | integer    | null: false                    |
-| shipping_fee_status | integer    | null: false                    |
-| prefecture          | integer    | null: false                    |
-| scheduled_delivery  | integer    | null: false                    |
+| ---------------------- | ---------- |------------------------------- |
+| name                   | string     | null: false                    |
+| info                   | text       | null: false                    |
+| price                  | integer    | null: false                    |
+| user                   | references | foreign_key: true              |
+| category_id            | integer    | null: false                    |
+| sales_status_id        | integer    | null: false                    |
+| shipping_fee_status_id | integer    | null: false                    |
+| prefecture_id          | integer    | null: false                    |
+| scheduled_delivery_id  | integer    | null: false                    |
 
 
 ### Association
@@ -49,7 +49,7 @@
 | -------- | ---------- | ----------------- |
 | user     | references | foreign_key: true |
 | item     | references | foreign_key: true |
-| date     | datetime   | null: false,      |
+
 
 
 ### Association
@@ -61,15 +61,15 @@
 
 ## addresses テーブル
 
-| Column        | Type        | Options           |
-| ------------- | ----------- | ----------------- |
-| postal_code   | string      | foreign_key: true |
-| city          | string      | foreign_key: true |
-| house_number  | string      | null: false,      |
-| building_name | string      | null: false,      |
-| phone_number  | integer     | null: false,      |
-| prefecture    | integer     | null: false,      |
-| order         | references  | foreign_key: true |
+| Column           | Type        | Options           |
+| ---------------- | ----------- | ----------------- |
+| postal_code      | string      | foreign_key: true |
+| city             | string      | foreign_key: true |
+| house_number_id  | string      | null: false,      |
+| building_name_id | string      |                   |
+| phone_number_id  | string      | null: false,      |
+| prefecture_id    | integer     | null: false,      |
+| order            | references  | foreign_key: true |
 
 
 ### Association
