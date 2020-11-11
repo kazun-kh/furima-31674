@@ -61,7 +61,6 @@ group :production do
   gem 'rails_12factor'
 end
 
-<<<<<<< Updated upstream
 gem 'devise'
 
 gem 'pry-rails'
@@ -71,8 +70,3 @@ gem 'rspec-rails', '~> 4.0.0'
 gem 'factory_bot_rails'
 
 gem 'faker'
-=======
-gem 'pry-rails'
-
-gem 'devise'
->>>>>>> Stashed changes
