@@ -11,7 +11,6 @@ describe User do
           expect(@user).to be_valid
         end
       
-        expect(@user).to be_valid
 
 
      
