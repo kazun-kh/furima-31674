@@ -10,12 +10,13 @@ class Item < ApplicationRecord
     belongs_to_active_hash :prefecture
 
   with_options presence: true do  
+    validates :image
     validates :name
     validates :info
     validates :price, format: {with: /\A[0-9]+\z/, message: "is invalid. Input half-width characters."}
   end
 
-    validates :price, numericality: { greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999, message: "is out of setting range"}
+  validates :price, numericality: { greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999, message: "is out of setting range"}
 
     validates :category_id,            numericality: { other_than: 1 } 
     validates :sales_status_id,        numericality: { other_than: 1 } 
