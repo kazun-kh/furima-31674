@@ -82,6 +82,7 @@ describe Item do
           it 'priceが全角数字だと保存できないこと' do
             @item.price = '２０００'
             @item.valid?
+            binding.pry
             expect(@item.errors.full_messages).to include("Price is out of setting range")
           end
 
