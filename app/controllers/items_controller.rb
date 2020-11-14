@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  
+  before_action :set_item, only: [:edit, :show]
   before_action :move_to_index, except: [:index, :show]
 
 
@@ -21,15 +21,12 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @item = Item.find(params[:id])
   end
 
   def edit
-    @item = Item.find(params[:id])
-    
     unless @item.user_id == current_user.id
       redirect_to action: :index
-  end
+    end
   end
 
   def update
@@ -50,6 +47,10 @@ class ItemsController < ApplicationController
 
   def item_params
     params.require(:item).permit(:name, :info, :price, :category_id, :sales_status_id, :shipping_fee_status_id, :prefecture_id, :scheduled_delivery_id, :image).merge(user_id: current_user.id)
+  end
+
+  def set_tweet
+    @item = Item.find(params[:id])
   end
  
   def move_to_index
