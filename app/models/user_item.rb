@@ -14,8 +14,12 @@ with_options presence: true do
 end
 validates :building_name, format: { with: /\A[ぁ-んァ-ン一-龥]/, message: "is invalid. Input full-width characters."}
 
-
   def save
     # 各テーブルにデータを保存する処理を書く
+
+  user = User.create
+  Order.create(who: hoge, when: hoge, what: hoge)
+  Address.create(postal_code: postal_code, prefecture: prefecture, city: city, house_number: house_number, building_name: building_name, phone_number: phone_number, user_id: user.id)
+  
   end
 end
