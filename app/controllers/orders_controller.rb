@@ -39,9 +39,10 @@ class OrdersController < ApplicationController
     unless user_signed_in?
       redirect_to action: :index
     end
+   end
+    
 
     def set_item
       @item = Item.find(params[:item_id])
     end
-  end
 end
