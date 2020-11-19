@@ -4,10 +4,9 @@ class OrdersController < ApplicationController
   
   def index
     @user_item = UserItem.new
-    unless @item.user_id == current_user.id
+    if @item.user_id == current_user.id || @item.order 
       redirect_to root_path
     end
-   
   end
 
   def create
@@ -45,5 +44,5 @@ class OrdersController < ApplicationController
 
     def set_item
       @item = Item.find(params[:item_id])
-    end
+  end
 end
